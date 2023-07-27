@@ -257,8 +257,8 @@ module Bundler
                             rescue GemfileNotFound
                               "inline Gemfile"
                             end
-              warn "#{name} is not part of the default gems since Ruby #{::Gem::BUNDLED_GEMS[file]}." \
-              " Add it to your #{target_file}."
+              warn ("#{name} is not part of the default gems since Ruby #{::Gem::BUNDLED_GEMS[file]}." \
+              " Add it to your #{target_file}.", category: :deprecated)
             end
           end
           kernel_class.send(:no_warning_require, file)
